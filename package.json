@@ -1,0 +1,19 @@
+{
+  "name": "ele-red",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "electron main.js",
+    "start": "electron main.js",
+    "build": "electron-builder",
+    "install": "electron-builder install-app-deps"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^22.0.3",
+    "electron-builder": "^23.6.0"
+  }
+}
