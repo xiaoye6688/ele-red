@@ -1,6 +1,6 @@
 {
   "name": "ele-red",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "main.js",
   "scripts": {
@@ -15,5 +15,6 @@
   "devDependencies": {
     "electron": "^22.0.3",
     "electron-builder": "^23.6.0"
-  }
+  },
+  "dependencies": {}
 }
