@@ -3,6 +3,7 @@ const { app, BrowserWindow } = require('electron');
 const path = require('path');
 const fs = require('fs');
 
+
 function createWindow() {
   let window = new BrowserWindow({
     width: 400,
@@ -40,7 +41,6 @@ function createWindow() {
   savePosition(window);
 
 }
-
 
 // 上下左右移动
 function UDLR(window) {
@@ -137,4 +137,17 @@ function savePosition(window) {
 
 
 }
-app.on('ready', createWindow);
+
+const gotTheLock = app.requestSingleInstanceLock()
+if (!gotTheLock) {
+  // 关闭进程中所有名为ele-red.exe的进程
+  require('child_process').exec('taskkill /f /im ele-red.exe', function (err, stdout, stderr) {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log(stdout);
+  });
+} else {
+  app.on('ready', createWindow);
+}
