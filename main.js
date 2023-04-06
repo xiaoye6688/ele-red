@@ -7,9 +7,9 @@ function createWindow() {
   let window = new BrowserWindow({
     width: 400,
     height: 400,
-    transparent: true,
-    frame: false,
-    alwaysOnTop: true,
+    transparent: true,// 透明
+    frame: false,// 无边框
+    alwaysOnTop: true,// 窗口置顶
     autoHideMenuBar: false, // 隐藏菜单栏 true为隐藏
   });
 
@@ -23,7 +23,8 @@ function createWindow() {
   redPackage = JSON.parse(redPackage);
   // 设置窗口的位置，left为rePackage.position[0]，top为redPackage.position[1]
   window.setPosition(redPackage.position[0], redPackage.position[1]);
-
+  let { width, height } = require('electron').screen.getPrimaryDisplay().workAreaSize;
+  window.setPosition(width / 2 - 200, height / 2 - 200);
 
   // 监听键盘的ctrl+shift+o组合键，实现窗口的显示和隐藏
   showO(window);
