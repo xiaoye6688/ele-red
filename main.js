@@ -21,8 +21,6 @@ function createWindow() {
   let redPackage = fs.readFileSync(path.join(__dirname, 'red-package.json'), 'utf-8');
   // 将red-package.json文件转换为json对象
   redPackage = JSON.parse(redPackage);
-  // 设置窗口的位置，left为rePackage.position[0]，top为redPackage.position[1]
-  window.setPosition(redPackage.position[0], redPackage.position[1]);
   let { width, height } = require('electron').screen.getPrimaryDisplay().workAreaSize;
   window.setPosition(width / 2 - 200, height / 2 - 200);
 
