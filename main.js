@@ -25,6 +25,10 @@ function createWindow() {
   let { width, height } = require('electron').screen.getPrimaryDisplay().workAreaSize;
   window.setPosition(width / 2 - 200, height / 2 - 200);
 
+  // 窗口加载完成后window自动失去焦点
+  window.on('ready-to-show', () => {
+    window.blur();
+  });
   // 监听键盘的ctrl+shift+o组合键，实现窗口的显示和隐藏
   showO(window);
 
