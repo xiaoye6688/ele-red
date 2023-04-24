@@ -1,6 +1,6 @@
 {
   "name": "ele-red",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "main": "main.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "electron-builder": "^23.6.0"
   },
   "nsis": {
-    "oneClick": false,
+    "oneClick":false,
     "allowToChangeInstallationDirectory": true
   },
   "dependencies": {}

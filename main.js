@@ -12,6 +12,8 @@ function createWindow() {
     frame: false,// 无边框
     alwaysOnTop: true,// 窗口置顶
     autoHideMenuBar: false, // 隐藏菜单栏 true为隐藏
+    // 不显示在任务栏
+    skipTaskbar: true,
   });
 
   window.loadURL(path.join('file://', __dirname, 'index.html'));
@@ -24,7 +26,8 @@ function createWindow() {
   redPackage = JSON.parse(redPackage);
   let { width, height } = require('electron').screen.getPrimaryDisplay().workAreaSize;
   window.setPosition(width / 2 - 200, height / 2 - 200);
-
+  // 窗口再次置顶
+  window.setAlwaysOnTop(true, 'pop-up-menu')
   // 窗口加载完成后window自动失去焦点
   window.on('ready-to-show', () => {
     window.blur();
