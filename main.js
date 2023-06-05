@@ -3,7 +3,7 @@ const { app, BrowserWindow } = require('electron');
 const path = require('path');
 const fs = require('fs');
 
-
+// 测试注释
 function createWindow() {
   let window = new BrowserWindow({
     width: 400,
