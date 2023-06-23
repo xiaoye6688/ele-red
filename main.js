@@ -12,8 +12,7 @@ function createWindow() {
     frame: false,// 无边框
     alwaysOnTop: true,// 窗口置顶
     autoHideMenuBar: false, // 隐藏菜单栏 true为隐藏
-    // 不显示在任务栏
-    skipTaskbar: true,
+    skipTaskbar: false,// 任务栏中是否隐藏 true为隐藏 false为显示
   });
 
   window.loadURL(path.join('file://', __dirname, 'index.html'));
