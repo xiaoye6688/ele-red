@@ -1,8 +1,9 @@
 // main.js
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, Tray } = require('electron');
 const path = require('path');
 const fs = require('fs');
 
+let tray = null;
 // 测试注释
 function createWindow() {
   let window = new BrowserWindow({
@@ -12,7 +13,8 @@ function createWindow() {
     frame: false,// 无边框
     alwaysOnTop: true,// 窗口置顶
     autoHideMenuBar: false, // 隐藏菜单栏 true为隐藏
-    skipTaskbar: false,// 任务栏中是否隐藏 true为隐藏 false为显示
+    skipTaskbar: true,// 任务栏中是否隐藏 true为隐藏 false为显示
+    icon: path.join(__dirname, 'icon/add.png'),
   });
 
   window.loadURL(path.join('file://', __dirname, 'index.html'));
@@ -47,6 +49,17 @@ function createWindow() {
   savePosition(window);
 
 }
+
+app.whenReady().then(() => {
+  // 设置图标位置为icon/十字.ico
+  tray = new Tray(path.join(__dirname, 'icon/十字.ico'));
+  // 设置右键菜单
+  const contextMenu = require('electron').Menu.buildFromTemplate([
+    { label: '退出', click: () => { app.quit(); } }
+  ]);
+  // 设置图标的右键菜单
+  tray.setContextMenu(contextMenu);
+});
 
 // 上下左右移动
 function UDLR(window) {
