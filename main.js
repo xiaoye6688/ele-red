@@ -16,7 +16,6 @@ function createWindow() {
     skipTaskbar: true,// 任务栏中是否隐藏 true为隐藏 false为显示
     icon: path.join(__dirname, 'icon/add.png'),
   });
-  
 
   window.loadURL(path.join('file://', __dirname, 'index.html'));
   // 设置window鼠标穿透
