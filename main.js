@@ -14,6 +14,10 @@ function createWindow() {
     alwaysOnTop: true,// 窗口置顶
     autoHideMenuBar: false, // 隐藏菜单栏 true为隐藏
     skipTaskbar: true,// 任务栏中是否隐藏 true为隐藏 false为显示
+    focusable: false, // 设置窗口不获取焦点
+    clickThrough: true, // 设置窗口鼠标穿透
+    // 窗口启动时不影响其他窗口
+    paintWhenInitiallyHidden: false,
     icon: path.join(__dirname, 'icon/add.png'),
   });
 
@@ -118,6 +122,7 @@ function showO(window) {
     } else {
       // 显示win
       window.show();
+      mainWindow.showInactive(); // 显示窗口但不获取焦点
     }
   });
 }
