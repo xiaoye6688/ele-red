@@ -1,6 +1,6 @@
 {
   "name": "ele-red",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "main": "main.js",
   "scripts": {
@@ -12,13 +12,23 @@
   },
   "author": "",
   "license": "ISC",
+  "build": {
+    "appId": "com.example.ele-red",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
   "devDependencies": {
     "electron": "^22.0.3",
     "electron-builder": "^23.6.0"
-  },
-  "nsis": {
-    "oneClick":false,
-    "allowToChangeInstallationDirectory": true
   },
   "dependencies": {}
 }
